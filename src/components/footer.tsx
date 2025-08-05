@@ -102,7 +102,7 @@ export default function Footer() {
           </p>
           <div className="flex flex-col space-y-2 md:flex-row items-center md:space-y-0 md:space-x-4 mt-4 md:mt-0">
             <select className="bg-black border border-gray-700 p-2">
-              <option>USD $ | Cameroon</option>
+              <option>USD $ | United States</option>
             </select>
             <Link href="/refunds-policy">Refund policy</Link>
             <Link href="/privacy-policy">Privacy policy</Link>
