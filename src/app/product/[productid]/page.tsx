@@ -140,17 +140,19 @@ export default async function ProductPage({
               <div className="text-white leading-relaxed">
                 {product.description ? (
                   <>
-                    {product.description.split('✔️').map((point, index) => {
-                      if (index === 0 && !point.trim()) return null;
-                      return (
-                        <p key={index} className="mb-2 flex">
-                          {index > 0 && (
-                            <span className="text-green-400 mr-2">✔️</span>
-                          )}
-                          <span>{point.trim()}</span>
-                        </p>
-                      );
-                    })}
+                    {product.description
+                      .split('✔️')
+                      .map((point: string, index: number) => {
+                        if (index === 0 && !point.trim()) return null;
+                        return (
+                          <p key={index} className="mb-2 flex">
+                            {index > 0 && (
+                              <span className="text-green-400 mr-2">✔️</span>
+                            )}
+                            <span>{point.trim()}</span>
+                          </p>
+                        );
+                      })}
                   </>
                 ) : (
                   'No description available for this product.'

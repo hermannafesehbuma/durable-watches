@@ -1,37 +1,23 @@
 'use client';
 
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
+import dynamic from 'next/dynamic';
 
-// Fix for default icon issue with webpack
-delete (L.Icon.Default.prototype as any)._getIconUrl;
-
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl:
-    'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
-  iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
-  shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
+// Dynamic import with no SSR
+const LeafletMap = dynamic(() => import('./leaflet-map'), {
+  ssr: false,
+  loading: () => (
+    <div
+      style={{ height: '400px', width: '100%' }}
+      className="bg-gray-200 flex items-center justify-center rounded-lg"
+    >
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600 mx-auto mb-2"></div>
+        <p className="text-gray-600">Loading map...</p>
+      </div>
+    </div>
+  ),
 });
 
-const position: [number, number] = [42.447902, -83.199163];
-
 export default function Map() {
-  return (
-    <MapContainer
-      center={position}
-      zoom={15}
-      scrollWheelZoom={false}
-      style={{ height: '400px', width: '100%' }}
-      className="z-10"
-    >
-      <TileLayer
-        attribution="Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community"
-        url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
-      />
-      <Marker position={position}>
-        <Popup>Retail Store</Popup>
-      </Marker>
-    </MapContainer>
-  );
+  return <LeafletMap />;
 }

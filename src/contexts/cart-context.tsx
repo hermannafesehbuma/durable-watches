@@ -83,12 +83,14 @@ const saveCartToStorage = (state: CartState) => {
 };
 
 function cartReducer(state: CartState, action: CartAction): CartState {
+  // Handle LOAD_FROM_STORAGE separately to avoid type narrowing issues
+  if (action.type === 'LOAD_FROM_STORAGE') {
+    return action.payload;
+  }
+
   let newState: CartState;
 
   switch (action.type) {
-    case 'LOAD_FROM_STORAGE':
-      return action.payload;
-
     case 'ADD_ITEM': {
       const existingItem = state.items.find(
         (item) => item.id === action.payload.id
@@ -162,10 +164,8 @@ function cartReducer(state: CartState, action: CartAction): CartState {
       return state;
   }
 
-  // Save to localStorage after state change (except for LOAD_FROM_STORAGE)
-  if (action.type !== 'LOAD_FROM_STORAGE') {
-    saveCartToStorage(newState);
-  }
+  // Save to localStorage after state change
+  saveCartToStorage(newState);
 
   return newState;
 }

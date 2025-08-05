@@ -68,12 +68,14 @@ function favoritesReducer(
   state: FavoritesState,
   action: FavoritesAction
 ): FavoritesState {
+  // Handle LOAD_FROM_STORAGE separately to avoid type narrowing issues
+  if (action.type === 'LOAD_FROM_STORAGE') {
+    return action.payload;
+  }
+
   let newState: FavoritesState;
 
   switch (action.type) {
-    case 'LOAD_FROM_STORAGE':
-      return action.payload;
-
     case 'ADD_FAVORITE': {
       const existingItem = state.items.find(
         (item) => item.id === action.payload.id
@@ -109,10 +111,8 @@ function favoritesReducer(
       return state;
   }
 
-  // Save to localStorage after state change (except for LOAD_FROM_STORAGE)
-  if (action.type !== 'LOAD_FROM_STORAGE') {
-    saveFavoritesToStorage(newState);
-  }
+  // Save to localStorage after state change
+  saveFavoritesToStorage(newState);
 
   return newState;
 }

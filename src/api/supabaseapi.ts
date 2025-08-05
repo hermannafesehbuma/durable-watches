@@ -602,13 +602,20 @@ export async function getAllOrdersWithDetailsForAdmin() {
     const ordersWithDetails = await Promise.all(
       orders.map(async (order) => {
         const { data: completeOrder } = await getCompleteOrderDetails(order.id);
-        return completeOrder || order;
+        // If getCompleteOrderDetails fails, create a fallback object with required properties
+        return (
+          completeOrder || {
+            ...order,
+            shipping_address: null,
+            order_items: [],
+          }
+        );
       })
     );
 
     return { data: ordersWithDetails, error: null };
   } catch (error) {
-    console.error('Error fetching all orders with details:', error);
+    console.error('Error fetching orders with details:', error);
     return { data: null, error };
   }
 }

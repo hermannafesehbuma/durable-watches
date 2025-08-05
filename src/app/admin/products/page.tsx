@@ -193,7 +193,9 @@ export default function AdminProducts() {
       }
     } catch (error) {
       console.error('Error updating product:', error);
-      alert(`Error updating product: ${error.message}`);
+      alert(
+        `Error updating product: ${error instanceof Error ? error.message : 'Unknown error occurred'}`
+      );
     }
   };
 
@@ -279,9 +281,8 @@ export default function AdminProducts() {
     try {
       // Step 1: Submit the Product
       console.log('Step 1: Creating product with data:', formData);
-      const { data: productData, error: productError } = await createProduct(
-        formData
-      );
+      const { data: productData, error: productError } =
+        await createProduct(formData);
 
       if (productError) {
         console.error('Error creating product:', productError);
@@ -303,12 +304,12 @@ export default function AdminProducts() {
 
         const result = await handleMediaUploads(productId, 0);
 
-        if (result.errors && result.errors.length > 0) {
+        if (result && result.errors && result.errors.length > 0) {
           console.error('Media upload errors:', result.errors);
           alert(
             `Product created successfully! ${result.data.length} files uploaded, ${result.errors.length} failed.`
           );
-        } else {
+        } else if (result) {
           console.log('All media files uploaded successfully');
         }
       }
@@ -330,7 +331,9 @@ export default function AdminProducts() {
       console.log('Product creation workflow completed successfully');
     } catch (error) {
       console.error('Error in product creation process:', error);
-      alert(`Error creating product: ${error.message}`);
+      alert(
+        `Error creating product: ${error instanceof Error ? error.message : 'Unknown error occurred'}`
+      );
     }
   };
 

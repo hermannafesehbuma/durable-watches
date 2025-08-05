@@ -144,7 +144,7 @@ export default function CheckoutPage() {
             },
             body: JSON.stringify({
               orderData: {
-                orderId: orderResult.id,
+                orderId: orderResult.order.id,
                 email: formData.email,
                 paymentMethod: formData.paymentMethod,
                 status: 'pending',
