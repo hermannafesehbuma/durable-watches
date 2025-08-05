@@ -9,6 +9,8 @@ export default function MotionSection() {
         autoPlay
         muted
         loop
+        playsInline
+        preload="auto"
         className=" right-0 bottom-0 min-w-full min-h-full -z-10 object-cover"
       >
         <source src="/videos/header-video.mp4" type="video/mp4" />
