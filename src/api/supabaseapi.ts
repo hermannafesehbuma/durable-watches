@@ -510,14 +510,21 @@ export async function getOrderItemsByOrderId(orderId: string) {
 
   // Transform the data to flatten the structure
   const transformedItems =
-    orderItems?.map((item) => ({
-      quantity: item.quantity,
-      product: {
-        ...item.products,
-        primary_image: item.products?.product_images?.[0] || null,
-        product_images: undefined,
-      },
-    })) || [];
+    orderItems?.map((item: any) => {
+      // Since products is joined, it should be a single object, not an array
+      const product = Array.isArray(item.products)
+        ? item.products[0]
+        : item.products;
+
+      return {
+        quantity: item.quantity,
+        product: {
+          ...product,
+          primary_image: product?.product_images?.[0] || null,
+          product_images: undefined,
+        },
+      };
+    }) || [];
 
   return { data: transformedItems, error: null };
 }
@@ -845,9 +852,8 @@ export async function createCompleteOrder(orderData: {
       ...item,
     }));
 
-    const { data: orderItems, error: itemsError } = await createOrderItems(
-      orderItemsData
-    );
+    const { data: orderItems, error: itemsError } =
+      await createOrderItems(orderItemsData);
 
     if (itemsError) {
       console.error('Error creating order items:', itemsError);
