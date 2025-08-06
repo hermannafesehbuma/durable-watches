@@ -44,7 +44,7 @@ const testimonials: Testimonial[] = [
     name: 'Capn Walt',
     rating: 4.7,
     testimonial:
-      'As a Rolex Enthusiast (buy, sell, trade) I am very happy to ad My Watch LLC to my source list. Danny is Great Communicator and very easy to business with. Looking forward to our next transaction.',
+      'As a Rolex Enthusiast (buy, sell, trade) I am very happy to ad Durable watches to my source list. Danny is Great Communicator and very easy to business with. Looking forward to our next transaction.',
   },
   {
     name: 'Jasson Weligh',
