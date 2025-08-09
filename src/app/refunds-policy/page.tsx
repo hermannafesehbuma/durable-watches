@@ -16,7 +16,7 @@ export default function Page() {
           Worn items will not be eligible for return. To start a return, you can
           contact us at 323-389-5316. <br />
           <br /> Please note that returns will need to be sent to the following
-          address: 21830 Greenfield Road, Oak Park MI 48237, United States If
+          address: 2County Lane Plaza at 15501 Bustleton Ave Philadelphia,PA If
           your return is accepted, we&apos;ll send you a return shipping label,
           as well as instructions on how and where to send your package. Items
           sent back to us without first requesting a return will not be
@@ -27,9 +27,9 @@ export default function Page() {
           receive the wrong item, so that we can evaluate the issue and make it
           right. Right to cancel order(s) All orders, whether initial or
           additional, are subject to acceptance by and shall only become
-          effective upon confirmation by My Watch LLC. Refunds We will notify
-          you once we&apos;ve received and inspected your return, and let you
-          know if the refund was approved or not.
+          effective upon confirmation. Refunds We will notify you once
+          we&apos;ve received and inspected your return, and let you know if the
+          refund was approved or not.
           <br />
           <br /> If approved, you&apos;ll be refunded on your original payment
           method. Please remember it can take some time for your bank or credit

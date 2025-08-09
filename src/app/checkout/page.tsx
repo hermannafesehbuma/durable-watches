@@ -239,33 +239,6 @@ export default function CheckoutPage() {
           </div>
         );
 
-      case 'stripe':
-        return (
-          <div className="bg-purple-900 border border-purple-700 rounded-lg p-6 mb-4">
-            <h4 className="text-purple-200 font-semibold mb-3">
-              Credit/Debit Card Payment
-            </h4>
-            <div className="text-purple-200 text-sm space-y-2">
-              <p>
-                <strong>Accepted Cards:</strong> Visa, Mastercard, American
-                Express, Discover
-              </p>
-              <p>
-                <strong>Security:</strong> All transactions are secured with SSL
-                encryption
-              </p>
-              <p>
-                <strong>Processing:</strong> Payments are processed instantly
-                via Stripe
-              </p>
-              <p className="mt-4 pt-2 border-t border-purple-700">
-                After placing your order, we will provide yopu with our stripe
-                link to proceed with the payemnt.
-              </p>
-            </div>
-          </div>
-        );
-
       default:
         return null;
     }

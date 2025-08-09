@@ -26,7 +26,6 @@ export default function Header() {
 
   const navItems = [
     { name: 'Collection', link: '/products' },
-    { name: 'Store Locator', link: '/location' },
     { name: 'Sell my Watch', link: '/sellmywatch' },
     { name: 'Contact us', link: '/contact' },
   ];

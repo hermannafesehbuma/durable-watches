@@ -12,7 +12,7 @@ export default function Page() {
             <div className="py-5  border-l-6 border-teal-600 px-2">
               {' '}
               <p className="text-teal-600">My Watch LLC</p>
-              <p>21830 Greenfield Rd, Oak Park, MI 48237, USA</p>
+              <p>County Lane Plaza at 15501 Bustleton Ave Philadelphia,PA</p>
             </div>
           </div>
         </div>

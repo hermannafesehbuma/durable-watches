@@ -406,8 +406,7 @@ export default function ShippingPolicyPage() {
                     </li>
                     <li>Email: Use our contact form on the website</li>
                     <li>
-                      Business Address: 21830 Greenfield Road, Oak Park MI
-                      48237, United States
+                      County Lane Plaza at 15501 Bustleton Ave Philadelphia,PA
                     </li>
                   </ul>
                   <p>

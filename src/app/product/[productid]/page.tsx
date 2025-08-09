@@ -171,7 +171,7 @@ export default async function ProductPage({
                     <span className="text-sm font-medium text-gray-500">
                       Brand:
                     </span>
-                    <p className="text-white">{product.brand}</p>
+                    <p className="text-white">Rolex</p>
                   </div>
                 )}
                 {product.category && (
@@ -185,7 +185,7 @@ export default async function ProductPage({
                 {product.daimeter && (
                   <div>
                     <span className="text-sm font-medium text-gray-500">
-                      Daimeter:
+                      Rolex Daimeter:
                     </span>
                     <p className="text-white">{product.daimeter}</p>
                   </div>

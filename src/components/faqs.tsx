@@ -17,7 +17,7 @@ const faqs = [
   {
     question: 'HOW DO I PURCHASE A WATCH?',
     answer:
-      'We insist on making it easy to purchase a luxury watch in person or online. Customers can make an appointment to visit our retail store Monday-Friday in Oak Park, Michigan, or simply go to our website to purchase one of the watches listed and have it shipped straight to you.',
+      'We insist on making it easy to purchase a luxury watch in person or online. Customers can make an appointment to visit our retail store Monday-Friday in Bustleton Ave Philadelphia, or simply go to our website to purchase one of the watches listed and have it shipped straight to you.',
   },
   {
     question: 'WHAT IS YOUR RETURN POLICY?',
