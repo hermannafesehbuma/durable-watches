@@ -118,9 +118,9 @@ export default function Footer() {
             Rolex USA, or any of its subsidiaries.
           </p>
           <p>
-            My Watch LLC is an independent watch dealer and is not sponsored by,
-            associated with and/or affiliated with Rolex S.A., Rolex USA, or any
-            other brand
+            Rolex durable Watches is an independent watch dealer and is not
+            sponsored by, associated with and/or affiliated with Rolex S.A.,
+            Rolex USA, or any other brand
           </p>
         </div>
       </div>
