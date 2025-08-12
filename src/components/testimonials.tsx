@@ -38,7 +38,7 @@ const testimonials: Testimonial[] = [
     name: 'Robert Bermann',
     rating: 4.5,
     testimonial:
-      'The timepiece exceeds my expectation. I can’t give better review. Danny was a tough negotiator but he was very competitive. I wouldn’t hesitate to do business with My Watch LLC. UPDATE: Well we had little issue with the watch. Not really the watch but the white tag didn’t come with the watch. As soon as I discovered I notified Danny and he couldn’t have been any kinder. He told me that he would replace the watch. He told about a Submariner that he had yet to put on his website. I received the timepiece next day. My experience, in the end, exceeded my expectations. My standards are high. Is there a way to give them 10 stars?!?!',
+      'The timepiece exceeds my expectation. I can’t give better review. Danny was a tough negotiator but he was very competitive. I wouldn’t hesitate to do business with DURABLE WATCHES SALE. UPDATE: Well we had little issue with the watch. Not really the watch but the white tag didn’t come with the watch. As soon as I discovered I notified Danny and he couldn’t have been any kinder. He told me that he would replace the watch. He told about a Submariner that he had yet to put on his website. I received the timepiece next day. My experience, in the end, exceeded my expectations. My standards are high. Is there a way to give them 10 stars?!?!',
   },
   {
     name: 'Capn Walt',
@@ -50,7 +50,7 @@ const testimonials: Testimonial[] = [
     name: 'Jasson Weligh',
     rating: 4.5,
     testimonial:
-      'I recently purchased a Day-Date from MY Watch LLC. I could not be any happier with my purchase. Danny answered all my questions and or concerns in a timely manner. Most importantly the watch I purchased is awesome. I will definitely be purchasing more watch from Danny. I recommend that anyone looking for a smooth transaction, with a wonderful person, who offers excellent watches you found it at MY Watches LLC',
+      'I recently purchased a Day-Date from DURABLE WATCHES SALE. I could not be any happier with my purchase. Danny answered all my questions and or concerns in a timely manner. Most importantly the watch I purchased is awesome. I will definitely be purchasing more watch from Danny. I recommend that anyone looking for a smooth transaction, with a wonderful person, who offers excellent watches you found it at MY Watches LLC',
   },
   {
     name: 'Phil Brines',

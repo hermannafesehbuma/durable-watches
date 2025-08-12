@@ -52,7 +52,7 @@ const faqs = [
   {
     question: 'ARE ALL YOUR WATCHES AUTHENTIC?',
     answer:
-      'We guarantee that every watch on this site is 100% authentic unless otherwise noted. Further, all our watches that may have been serviced, are serviced with authentic Rolex parts. My Watch LLC stands behind this authenticity guarantee and offers a full refund on any watch not found to be completely authentic',
+      'We guarantee that every watch on this site is 100% authentic unless otherwise noted. Further, all our watches that may have been serviced, are serviced with authentic Rolex parts. DURABLE WATCHES SALE stands behind this authenticity guarantee and offers a full refund on any watch not found to be completely authentic',
   },
   {
     question: 'HOW MUCH IS SHIPPING?',

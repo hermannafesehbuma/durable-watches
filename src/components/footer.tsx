@@ -111,8 +111,8 @@ export default function Footer() {
 
         <div className="mt-8 text-center text-xs text-gray-500">
           <p>
-            All rights reserved. My Watch LLC is not affiliated with Rolex S.A.,
-            Rolex USA, or any of its subsidiaries.
+            All rights reserved. DURABLE WATCHES SALE is not affiliated with
+            Rolex S.A., Rolex USA, or any of its subsidiaries.
           </p>
           <p>
             Rolex durable Watches is an independent watch dealer and is not

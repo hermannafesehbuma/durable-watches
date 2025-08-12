@@ -39,7 +39,7 @@ const testimonials: Testimonial[] = [
     name: 'Robert Bermann',
     rating: 4.5,
     testimonial:
-      "The timepiece exceeds my expectation. I can't give better review. Danny was a tough negotiator but he was very competitive. I wouldn't hesitate to do business with My Watch LLC.",
+      "The timepiece exceeds my expectation. I can't give better review. Danny was a tough negotiator but he was very competitive. I wouldn't hesitate to do business with DURABLE WATCHES SALE.",
   },
   {
     name: 'Phil Brines',
