@@ -38,7 +38,7 @@ export default function AdminDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4 sm:p-6 lg:p-8 pt-30">
+    <div className="min-h-screen bg-gray-50 p-4 sm:p-6 lg:p-8 mt-30">
       <div className="container mx-auto px-2 sm:px-4">
         <div className="max-w-4xl mx-auto">
           {/* Header with logout button */}

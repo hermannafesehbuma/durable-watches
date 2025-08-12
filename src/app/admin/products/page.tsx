@@ -120,7 +120,7 @@ export default function AdminProducts() {
       name: product.name,
       price: product.price,
       description: product.description || '',
-      category_id: product.category_id || '', // Changed from 'category' to 'category_id'
+      category_id: product.category_id || '',
       stock_quantity: product.stock_quantity || 0,
     });
   };
@@ -344,9 +344,21 @@ export default function AdminProducts() {
       const { error } = await deleteProductImage(imageId);
       if (error) throw error;
 
+      // Update the main products list
       await fetchProducts();
+
+      // Update the editingProduct state to reflect changes immediately
+      if (editingProduct && editingProduct.id === productId) {
+        setEditingProduct({
+          ...editingProduct,
+          product_images: editingProduct.product_images.filter(
+            (img) => img.id !== imageId
+          ),
+        });
+      }
+
       alert('Image deleted successfully!');
-    } catch (error) {
+    } catch (error: unknown) {
       console.error('Error deleting image:', error);
       alert('Error deleting image');
     }
@@ -357,9 +369,22 @@ export default function AdminProducts() {
       const { error } = await setPrimaryImage(productId, imageId);
       if (error) throw error;
 
+      // Update the main products list
       await fetchProducts();
+
+      // Update the editingProduct state to reflect changes immediately
+      if (editingProduct && editingProduct.id === productId) {
+        setEditingProduct({
+          ...editingProduct,
+          product_images: editingProduct.product_images.map((img) => ({
+            ...img,
+            is_primary: img.id === imageId,
+          })),
+        });
+      }
+
       alert('Primary image updated!');
-    } catch (error) {
+    } catch (error: unknown) {
       console.error('Error setting primary image:', error);
       alert('Error setting primary image');
     }
@@ -374,7 +399,7 @@ export default function AdminProducts() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4 sm:p-6 lg:p-8 pt-30">
+    <div className="min-h-screen bg-gray-50 p-4 sm:p-6 lg:p-8 mt-30">
       <div className="container mx-auto px-2 sm:px-4">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
@@ -395,7 +420,17 @@ export default function AdminProducts() {
                 Back to Dashboard
               </Link>
               <button
-                onClick={() => setShowCreateForm(true)}
+                onClick={() => {
+                  setShowCreateForm(true);
+                  setFormData({
+                    name: '',
+                    price: 0,
+                    description: '',
+                    category_id: '',
+                    stock_quantity: 0,
+                  });
+                  setMediaFiles(null);
+                }}
                 className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center justify-center gap-2"
               >
                 <FaPlus /> Add New Product
@@ -552,6 +587,329 @@ export default function AdminProducts() {
           </div>
         </div>
       </div>
+
+      {/* Edit Product Modal */}
+      {editingProduct && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-lg p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+            <h2 className="text-xl font-bold mb-4">Edit Product</h2>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleSave();
+              }}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Product Name
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                    className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Price ($)
+                  </label>
+                  <input
+                    type="number"
+                    step="0.01"
+                    value={formData.price}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        price: parseFloat(e.target.value) || 0,
+                      })
+                    }
+                    className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Category
+                  </label>
+                  <select
+                    value={formData.category_id}
+                    onChange={(e) =>
+                      setFormData({ ...formData, category_id: e.target.value })
+                    }
+                    className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
+                  >
+                    <option value="">Select Category</option>
+                    {categories.map((category) => (
+                      <option key={category.id} value={category.id}>
+                        {category.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Stock Quantity
+                  </label>
+                  <input
+                    type="number"
+                    value={formData.stock_quantity}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        stock_quantity: parseInt(e.target.value) || 0,
+                      })
+                    }
+                    className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
+                    required
+                  />
+                </div>
+              </div>
+              <div className="mt-4">
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Description
+                </label>
+                <textarea
+                  value={formData.description}
+                  onChange={(e) =>
+                    setFormData({ ...formData, description: e.target.value })
+                  }
+                  rows={3}
+                  className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
+                />
+              </div>
+              <div className="mt-4">
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Add New Images/Videos
+                </label>
+                <input
+                  type="file"
+                  multiple
+                  accept="image/*,video/*"
+                  onChange={(e) => setMediaFiles(e.target.files)}
+                  className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
+                />
+              </div>
+
+              {/* Current Images */}
+              {editingProduct.product_images.length > 0 && (
+                <div className="mt-4">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Current Images
+                  </label>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                    {editingProduct.product_images.map((image) => (
+                      <div key={image.id} className="relative">
+                        <Image
+                          src={image.url}
+                          alt={image.alt_text || 'Product image'}
+                          width={100}
+                          height={100}
+                          className="w-full h-20 object-cover rounded"
+                        />
+                        <div className="absolute top-1 right-1 flex gap-1">
+                          {!image.is_primary && (
+                            <button
+                              type="button"
+                              onClick={() =>
+                                handleSetPrimary(editingProduct.id, image.id)
+                              }
+                              className="bg-yellow-500 text-white p-1 rounded text-xs hover:bg-yellow-600"
+                              title="Set as primary"
+                            >
+                              <FaStar size={10} />
+                            </button>
+                          )}
+                          <button
+                            type="button"
+                            onClick={() =>
+                              handleDeleteImage(image.id, editingProduct.id)
+                            }
+                            className="bg-red-500 text-white p-1 rounded text-xs hover:bg-red-600"
+                            title="Delete image"
+                          >
+                            <FaTrash size={10} />
+                          </button>
+                        </div>
+                        {image.is_primary && (
+                          <div className="absolute bottom-1 left-1 bg-yellow-500 text-white px-1 py-0.5 rounded text-xs">
+                            Primary
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <div className="flex justify-end space-x-2 mt-6">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setEditingProduct(null);
+                    setMediaFiles(null);
+                  }}
+                  className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  disabled={uploading}
+                  className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50"
+                >
+                  {uploading ? 'Saving...' : 'Save Changes'}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Create Product Modal */}
+      {showCreateForm && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-lg p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+            <h2 className="text-xl font-bold mb-4">Add New Product</h2>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleCreate();
+              }}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Product Name
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                    className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Price ($)
+                  </label>
+                  <input
+                    type="number"
+                    step="0.01"
+                    value={formData.price}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        price: parseFloat(e.target.value) || 0,
+                      })
+                    }
+                    className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Category
+                  </label>
+                  <select
+                    value={formData.category_id}
+                    onChange={(e) =>
+                      setFormData({ ...formData, category_id: e.target.value })
+                    }
+                    className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
+                  >
+                    <option value="">Select Category</option>
+                    {categories.map((category) => (
+                      <option key={category.id} value={category.id}>
+                        {category.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Stock Quantity
+                  </label>
+                  <input
+                    type="number"
+                    value={formData.stock_quantity}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        stock_quantity: parseInt(e.target.value) || 0,
+                      })
+                    }
+                    className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
+                    required
+                  />
+                </div>
+              </div>
+              <div className="mt-4">
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Description
+                </label>
+                <textarea
+                  value={formData.description}
+                  onChange={(e) =>
+                    setFormData({ ...formData, description: e.target.value })
+                  }
+                  rows={3}
+                  className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
+                />
+              </div>
+              <div className="mt-4">
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Product Images/Videos
+                </label>
+                <input
+                  type="file"
+                  multiple
+                  accept="image/*,video/*"
+                  onChange={(e) => setMediaFiles(e.target.files)}
+                  className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
+                />
+                <p className="text-sm text-gray-500 mt-1">
+                  Select multiple images or videos. The first image will be set
+                  as primary.
+                </p>
+              </div>
+              <div className="flex justify-end space-x-2 mt-6">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setShowCreateForm(false);
+                    setFormData({
+                      name: '',
+                      price: 0,
+                      description: '',
+                      category_id: '',
+                      stock_quantity: 0,
+                    });
+                    setMediaFiles(null);
+                  }}
+                  className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  disabled={uploading}
+                  className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50"
+                >
+                  {uploading ? 'Creating...' : 'Create Product'}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

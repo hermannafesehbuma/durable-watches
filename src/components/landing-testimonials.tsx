@@ -15,7 +15,7 @@ const testimonials: Testimonial[] = [
     name: 'Alex Johnson',
     rating: 5,
     testimonial:
-      'From the moment I inquired about a vintage piece, the team at MyWatchLLC was exceptional. Their knowledge and passion are unmatched. The shipping was discreet and incredibly fast. A truly five-star experience from start to finish!',
+      'From the moment I inquired about a vintage piece, the team at Durable Watches Sale was exceptional. Their knowledge and passion are unmatched. The shipping was discreet and incredibly fast. A truly five-star experience from start to finish!',
   },
   {
     name: 'Samantha Bee',
@@ -27,13 +27,13 @@ const testimonials: Testimonial[] = [
     name: 'Michael Chen',
     rating: 5,
     testimonial:
-      "The level of detail and care that went into my purchase was astounding. Jeff took the time to walk me through the watch's features and history. It's rare to find such personalized service. MyWatchLLC has earned a customer for life.",
+      "The level of detail and care that went into my purchase was astounding. Jeff took the time to walk me through the watch's features and history. It's rare to find such personalized service. Durable Watches Sale has earned a customer for life.",
   },
   {
     name: 'Jessica Miller',
     rating: 5,
     testimonial:
-      'I had been searching for a specific model for months. MyWatchLLC not only sourced it for me but offered it at a competitive price. The entire transaction was smooth, and their communication was top-notch. Highly recommended!',
+      'I had been searching for a specific model for months. Durable Watches Sale not only sourced it for me but offered it at a competitive price. The entire transaction was smooth, and their communication was top-notch. Highly recommended!',
   },
   {
     name: 'Robert Bermann',
@@ -115,7 +115,7 @@ export default function LandingTestimonials() {
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Don't just take our word for it. Here's what our customers say about
-            their experience with MyWatchLLC.
+            their experience with Durable Watches Sale.
           </p>
         </motion.div>
 
