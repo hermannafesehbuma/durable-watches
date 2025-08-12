@@ -20,7 +20,7 @@ interface CheckoutForm {
   zipCode: string;
   country: string;
   phone: string;
-  paymentMethod: 'wire' | 'crypto' | 'zelle' | 'stripe';
+  paymentMethod: 'wire' | 'crypto' | 'zelle';
 }
 
 interface PrimaryImage {
@@ -45,7 +45,7 @@ export default function CheckoutPage() {
     zipCode: '',
     country: 'United States',
     phone: '',
-    paymentMethod: 'stripe',
+    paymentMethod: 'wire',
   });
 
   // Calculate order totals
@@ -391,7 +391,6 @@ export default function CheckoutPage() {
                     onChange={handleInputChange}
                     className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-teal-500"
                   >
-                    <option value="stripe">Credit/Debit Card (Stripe)</option>
                     <option value="wire">Wire Transfer</option>
                     <option value="crypto">Cryptocurrency</option>
                     <option value="zelle">Zelle</option>

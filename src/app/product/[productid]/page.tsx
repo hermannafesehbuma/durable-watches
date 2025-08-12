@@ -215,9 +215,6 @@ export default async function ProductPage({
                 <AddToCart product={product} />
               </div>
               <div className="flex flex-row gap-2">
-                <button className="w-full py-3 px-6 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-800 transition-colors hover:text-white">
-                  Buy Now
-                </button>
                 <FavoriteButton
                   product={{
                     id: productId,
@@ -247,9 +244,6 @@ export default async function ProductPage({
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                <span className="text-sm text-white">
-                  Free shipping on orders over $100
-                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <svg
