@@ -204,8 +204,8 @@ export default function ShippingPolicyPage() {
                   </p>
                   <p>
                     Due to shipping restrictions and regulations, we cannot ship
-                    to certain countries. Please contact us at 323-389-5316 to
-                    verify if we can ship to your location.
+                    to certain countries. Please contact us to verify if we can
+                    ship to your location.
                   </p>
                   <p>
                     <strong>Currency and Pricing:</strong>
@@ -295,8 +295,7 @@ export default function ShippingPolicyPage() {
                   </ul>
                   <p>
                     If your shipment is delayed, we will proactively contact you
-                    with updates. For urgent delivery needs, please contact our
-                    customer service team at 323-389-5316.
+                    with updates. For urgent delivery needs, please contact us.
                   </p>
                   <p>
                     <strong>Lost or Damaged Packages:</strong>
@@ -328,9 +327,6 @@ export default function ShippingPolicyPage() {
                     <li>
                       Changes must be requested within 2 hours of order
                       placement
-                    </li>
-                    <li>
-                      Contact customer service immediately at 323-389-5316
                     </li>
                     <li>Address changes may incur additional shipping fees</li>
                     <li>No changes possible once package is in transit</li>
@@ -401,9 +397,7 @@ export default function ShippingPolicyPage() {
                     <strong>Contact Information:</strong>
                   </p>
                   <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li>
-                      Phone: 323-389-5316 (Monday - Friday, 9 AM - 6 PM EST)
-                    </li>
+                    <li>(Monday - Friday, 9 AM - 6 PM EST)</li>
                     <li>Email: Use our contact form on the website</li>
                     <li>
                       County Lane Plaza at 15501 Bustleton Ave Philadelphia,PA

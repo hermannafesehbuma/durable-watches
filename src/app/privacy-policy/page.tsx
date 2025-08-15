@@ -15,9 +15,9 @@ export default function Page() {
         <p>
           After reviewing this policy, if you have additional questions, want
           more information about our privacy practices, or would like to make a
-          complaint, please contact us by using the contact form, by calling (1)
-          323-338-5316 or by mail using the details provided below: County Lane
-          Plaza at 15501 Bustleton Ave Philadelphia,PA
+          complaint, please contact us by using the contact form, mail using the
+          details provided below: County Lane Plaza at 15501 Bustleton Ave
+          Philadelphia,PA
         </p>
         <h3 className="text-xl font-bold mt-10">
           Collecting Personal Information

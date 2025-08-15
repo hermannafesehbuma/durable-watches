@@ -8,7 +8,6 @@ export default function Page() {
         <h1 className="text-4xl ">Rolex Durable Watches Contact info</h1>
         <h3 className="mt-20">Retail Store Address</h3>
         <p>County Lane Plaza at 15501 Bustleton Ave Philadelphia,PA</p>
-        <p>Phone: +1 323 389 5316</p>
         <p>Email: contact@durablewatchessale.com</p>
         <p>HOURS (By Appointment Only) 9:00 am - 6:00 pm Monday - Saturday</p>
         <p className="mt-5">

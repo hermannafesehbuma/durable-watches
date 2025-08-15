@@ -78,7 +78,7 @@ No orders are shipped or delivered on weekends or holidays. We cannot guarantee 
   },
   {
     question: 'WHAT ARE MY PAYMENT OPTIONS?',
-    answer: `Our payment options are bank wire (bank transfer), cash, all major US credit/debit cards, and our payment plan offering is via third-party provider Affirm. For international orders, we accept wire payment only. All credit card payments go through a fraud check which can take about 24-48 hours to complete. 
+    answer: `Our payment options are bank wire (bank transfer), Zelle, Crypto Currency, and our payment plan offering is via third-party provider Affirm. For international orders, we accept wire payment only. All credit card payments go through a fraud check which can take about 24-48 hours to complete. 
 
 For deposits (when sourcing a watch) we also accept Zelle, Crypto `,
   },

@@ -24,7 +24,6 @@ export default function Footer() {
             <p>County Lane Plaza</p>
             <p>Bustleton Ave, PA 15501</p>
             <p className="mt-4">MON-SAT 9AM - 6PM (EST)</p>
-            <p>Phone: 323 389 5316</p>
           </div>
 
           {/* Contact Links */}
