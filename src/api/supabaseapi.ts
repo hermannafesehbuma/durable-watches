@@ -212,15 +212,25 @@ export async function createProduct(productData: {
 
 // Function to upload product image to watchesrolex bucket
 export async function uploadProductImage(file: File, productId: string) {
-  const fileExt = file.name.split('.').pop();
+  const fileExt = file.name.split('.').pop()?.toLowerCase();
   const fileName = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`;
   // Organize images in folders by product_id for better organization
   const filePath = `${productId}/${fileName}`;
 
-  // Upload to the 'watchesrolex' storage bucket
+  // Determine the correct content type based on file extension
+  let contentType = 'image/jpeg'; // default
+  if (fileExt === 'png') contentType = 'image/png';
+  else if (fileExt === 'webp') contentType = 'image/webp';
+  else if (fileExt === 'gif') contentType = 'image/gif';
+  else if (fileExt === 'jpg' || fileExt === 'jpeg') contentType = 'image/jpeg';
+
+  // Upload to the 'watchesrolex' storage bucket with explicit content type
   const { data: uploadData, error: uploadError } = await supabase.storage
     .from('watchesrolex')
-    .upload(filePath, file);
+    .upload(filePath, file, {
+      contentType: contentType,
+      upsert: true,
+    });
 
   if (uploadError) {
     console.error('Upload error:', uploadError);
@@ -647,15 +657,26 @@ export async function getAllProductsForAdmin() {
 
 // Function to upload product video to watchesrolex bucket
 export async function uploadProductVideo(file: File, productId: string) {
-  const fileExt = file.name.split('.').pop();
+  const fileExt = file.name.split('.').pop()?.toLowerCase();
   const fileName = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`;
   // Organize videos in folders by product_id for better organization
   const filePath = `${productId}/videos/${fileName}`;
 
-  // Upload to the 'watchesrolex' storage bucket
+  // Determine the correct content type based on file extension
+  let contentType = 'video/mp4'; // default
+  if (fileExt === 'webm') contentType = 'video/webm';
+  else if (fileExt === 'mov') contentType = 'video/quicktime';
+  else if (fileExt === 'avi') contentType = 'video/x-msvideo';
+  else if (fileExt === 'mkv') contentType = 'video/x-matroska';
+  else if (fileExt === 'mp4') contentType = 'video/mp4';
+
+  // Upload to the 'watchesrolex' storage bucket with explicit content type
   const { data: uploadData, error: uploadError } = await supabase.storage
     .from('watchesrolex')
-    .upload(filePath, file);
+    .upload(filePath, file, {
+      contentType: contentType,
+      upsert: true,
+    });
 
   if (uploadError) {
     console.error('Video upload error:', uploadError);
