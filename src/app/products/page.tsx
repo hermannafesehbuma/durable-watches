@@ -59,6 +59,13 @@ export default function ProductsPage() {
     }
 
     fetchProducts();
+    
+    // Set up 60-second revalidation
+    const interval = setInterval(() => {
+      fetchProducts();
+    }, 60000); // 60 seconds
+    
+    return () => clearInterval(interval);
   }, []);
 
   // Calculate pagination

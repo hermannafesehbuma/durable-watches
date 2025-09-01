@@ -68,6 +68,14 @@ export default function AdminProducts() {
   useEffect(() => {
     fetchProducts();
     fetchCategories(); // Add this line
+    
+    // Set up 60-second revalidation
+    const interval = setInterval(() => {
+      fetchProducts();
+      fetchCategories();
+    }, 60000); // 60 seconds
+    
+    return () => clearInterval(interval);
   }, []);
 
   // Add fetchCategories function
