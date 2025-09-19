@@ -20,7 +20,7 @@ const testimonials: Testimonial[] = [
     name: 'Samantha Bee',
     rating: 4.9,
     testimonial:
-      "I was hesitant to purchase a luxury watch online, but Danny and his team made the process seamless and transparent. The watch arrived in pristine condition, exactly as described. Their reputation is well-deserved. I'm already planning my next purchase!",
+      "I was hesitant to purchase a luxury watch online, but Adrian and his team made the process seamless and transparent. The watch arrived in pristine condition, exactly as described. Their reputation is well-deserved. I'm already planning my next purchase!",
   },
   {
     name: 'Michael Chen',
@@ -38,37 +38,37 @@ const testimonials: Testimonial[] = [
     name: 'Robert Bermann',
     rating: 4.5,
     testimonial:
-      'The timepiece exceeds my expectation. I can’t give better review. Danny was a tough negotiator but he was very competitive. I wouldn’t hesitate to do business with DURABLE WATCHES SALE. UPDATE: Well we had little issue with the watch. Not really the watch but the white tag didn’t come with the watch. As soon as I discovered I notified Danny and he couldn’t have been any kinder. He told me that he would replace the watch. He told about a Submariner that he had yet to put on his website. I received the timepiece next day. My experience, in the end, exceeded my expectations. My standards are high. Is there a way to give them 10 stars?!?!',
+      'The timepiece exceeds my expectation. I can’t give better review. Adrian was a tough negotiator but he was very competitive. I wouldn’t hesitate to do business with DURABLE WATCHES SALE. UPDATE: Well we had little issue with the watch. Not really the watch but the white tag didn’t come with the watch. As soon as I discovered I notified Adrian and he couldn’t have been any kinder. He told me that he would replace the watch. He told about a Submariner that he had yet to put on his website. I received the timepiece next day. My experience, in the end, exceeded my expectations. My standards are high. Is there a way to give them 10 stars?!?!',
   },
   {
     name: 'Capn Walt',
     rating: 4.7,
     testimonial:
-      'As a Rolex Enthusiast (buy, sell, trade) I am very happy to ad Durable watches to my source list. Danny is Great Communicator and very easy to business with. Looking forward to our next transaction.',
+      'As a Rolex Enthusiast (buy, sell, trade) I am very happy to ad Durable watches to my source list. Adrian is Great Communicator and very easy to business with. Looking forward to our next transaction.',
   },
   {
     name: 'Jasson Weligh',
     rating: 4.5,
     testimonial:
-      'I recently purchased a Day-Date from DURABLE WATCHES SALE. I could not be any happier with my purchase. Danny answered all my questions and or concerns in a timely manner. Most importantly the watch I purchased is awesome. I will definitely be purchasing more watch from Danny. I recommend that anyone looking for a smooth transaction, with a wonderful person, who offers excellent watches you found it at MY Watches LLC',
+      'I recently purchased a Day-Date from DURABLE WATCHES SALE. I could not be any happier with my purchase. Adrian answered all my questions and or concerns in a timely manner. Most importantly the watch I purchased is awesome. I will definitely be purchasing more watch from Adrian. I recommend that anyone looking for a smooth transaction, with a wonderful person, who offers excellent watches you found it at  Durables Watches',
   },
   {
     name: 'Phil Brines',
     rating: 4.8,
     testimonial:
-      'The best of the best service imaginable! Danny is a top shelf professional. I truly appreciate this. They are a small shop and they seem legitimately nice people. Looking for a watch? They’ve probably got it waiting there for you. Amazing place full of amazing people. Also, I’m head over heels in love with my Rolex DJ41. The mint green dial soothes my soul.',
+      'The best of the best service imaginable! Adrian is a top shelf professional. I truly appreciate this. They are a small shop and they seem legitimately nice people. Looking for a watch? They’ve probably got it waiting there for you. Amazing place full of amazing people. Also, I’m head over heels in love with my Rolex DJ41. The mint green dial soothes my soul.',
   },
   {
     name: 'Gabriel Proal',
     rating: 4.8,
     testimonial:
-      'Big thanks to Sam, Danny, & Jeff who were a pleasure to work with. They answered all my questions, chatted with me on facetime, & shipped overnight. The watch is beautiful!',
+      'Big thanks to Sam, Adrian, & Jeff who were a pleasure to work with. They answered all my questions, chatted with me on facetime, & shipped overnight. The watch is beautiful!',
   },
   {
     name: 'Suzan Asher',
     rating: 5,
     testimonial:
-      'Smoothe and seamless transaction. And, as others have commented, the communication was excellent and shipping was quick and safe. Danny is great to work with.',
+      'Smoothe and seamless transaction. And, as others have commented, the communication was excellent and shipping was quick and safe. Adrian is great to work with.',
   },
 ];
 

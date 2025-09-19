@@ -21,7 +21,7 @@ const testimonials: Testimonial[] = [
     name: 'Samantha Bee',
     rating: 4.9,
     testimonial:
-      "I was hesitant to purchase a luxury watch online, but Danny and his team made the process seamless and transparent. The watch arrived in pristine condition, exactly as described. Their reputation is well-deserved. I'm already planning my next purchase!",
+      "I was hesitant to purchase a luxury watch online, but Adrian and his team made the process seamless and transparent. The watch arrived in pristine condition, exactly as described. Their reputation is well-deserved. I'm already planning my next purchase!",
   },
   {
     name: 'Michael Chen',
@@ -39,13 +39,13 @@ const testimonials: Testimonial[] = [
     name: 'Robert Bermann',
     rating: 4.5,
     testimonial:
-      "The timepiece exceeds my expectation. I can't give better review. Danny was a tough negotiator but he was very competitive. I wouldn't hesitate to do business with DURABLE WATCHES SALE.",
+      "The timepiece exceeds my expectation. I can't give better review. Adrian was a tough negotiator but he was very competitive. I wouldn't hesitate to do business with DURABLE WATCHES SALE.",
   },
   {
     name: 'Phil Brines',
     rating: 4.8,
     testimonial:
-      'The best of the best service imaginable! Danny is a top shelf professional. They are a small shop and they seem legitimately nice people. Amazing place full of amazing people.',
+      'The best of the best service imaginable! Adrian is a top shelf professional. They are a small shop and they seem legitimately nice people. Amazing place full of amazing people.',
   },
 ];
 
