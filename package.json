@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "cp node_modules/lightningcss-darwin-arm64/lightningcss.darwin-arm64.node node_modules/lightningcss/lightningcss.darwin-arm64.node 2>/dev/null || true"
   },
   "dependencies": {
     "@supabase/auth-helpers-nextjs": "^0.10.0",
