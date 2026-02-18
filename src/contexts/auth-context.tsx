@@ -1,8 +1,8 @@
 'use client';
 
 import { createContext, useContext, useEffect, useState } from 'react';
-import { User, Session } from '@supabase/supabase-js';
-import { supabase } from '@/lib/supabase';
+import { User, Session, SupabaseClient } from '@supabase/supabase-js';
+import { createSupabaseBrowserClient } from '@/lib/supabase-browser';
 
 interface AuthContextType {
   user: User | null;
@@ -20,6 +20,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
+  // Create a single browser client instance for this provider
+  const [supabase] = useState<SupabaseClient>(() => createSupabaseBrowserClient());
 
   useEffect(() => {
     // Get initial session
@@ -41,7 +43,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     });
 
     return () => subscription.unsubscribe();
-  }, []);
+  }, [supabase]);
 
   const checkAdminStatus = async (user: User | null) => {
     if (!user) {
