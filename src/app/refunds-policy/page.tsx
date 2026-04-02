@@ -16,7 +16,7 @@ export default function Page() {
           Worn items will not be eligible for return. To start a return, you can
           contact us <br />
           <br /> Please note that returns will need to be sent to the following
-          address: 1719 Chestnut St, Unit 300, Philadelphia, PA 19103, United States. If
+          address: 701 Sansom St, Philadelphia, PA 19106, United States. If
           your return is accepted, we&apos;ll send you a return shipping label,
           as well as instructions on how and where to send your package. Items
           sent back to us without first requesting a return will not be

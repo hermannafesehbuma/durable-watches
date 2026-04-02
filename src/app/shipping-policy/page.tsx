@@ -400,7 +400,7 @@ export default function ShippingPolicyPage() {
                     <li>(Monday - Friday, 9 AM - 6 PM EST)</li>
                     <li>Email: Use our contact form on the website</li>
                     <li>
-                      1719 Chestnut St, Unit 300, Philadelphia, PA 19103, United States
+                      701 Sansom St, Philadelphia, PA 19106, United States
                     </li>
                   </ul>
                   <p>

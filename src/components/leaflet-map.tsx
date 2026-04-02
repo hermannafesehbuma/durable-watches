@@ -14,7 +14,7 @@ L.Icon.Default.mergeOptions({
   shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
 });
 
-const position: [number, number] = [42.447902, -83.199163];
+const position: [number, number] = [39.9483, -75.1523];
 
 export default function LeafletMap() {
   return (

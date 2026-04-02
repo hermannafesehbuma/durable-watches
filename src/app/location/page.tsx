@@ -12,7 +12,7 @@ export default function Page() {
             <div className="py-5  border-l-6 border-teal-600 px-2">
               {' '}
               <p className="text-teal-600">DURABLE WATCHES SALE</p>
-              <p>1719 Chestnut St, Unit 300, Philadelphia, PA 19103, United States</p>
+              <p>701 Sansom St, Philadelphia, PA 19106, United States</p>
             </div>
           </div>
         </div>

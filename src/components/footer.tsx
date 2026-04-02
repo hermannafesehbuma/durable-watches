@@ -21,9 +21,8 @@ export default function Footer() {
           {/* Michigan Location */}
           <div>
             <h3 className="font-bold text-lg mb-4">Philadelphia</h3>
-            <p>1719 Chestnut St</p>
-            <p>Unit 300</p>
-            <p>Philadelphia, PA 19103</p>
+            <p>701 Sansom St</p>
+            <p>Philadelphia, PA 19106</p>
             <p>United States</p>
             <p className="mt-4">MON-SAT 9AM - 6PM (EST)</p>
           </div>

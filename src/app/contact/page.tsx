@@ -7,7 +7,7 @@ export default function Page() {
       <section className="pt-30 px-10">
         <h1 className="text-4xl ">Rolex Durable Watches Contact info</h1>
         <h3 className="mt-20">Retail Store Address</h3>
-        <p>1719 Chestnut St, Unit 300, Philadelphia, PA 19103, United States</p>
+        <p>701 Sansom St, Philadelphia, PA 19106, United States</p>
         <p>Email: contact@durablewatchessale.com</p>
         <p>HOURS (By Appointment Only) 9:00 am - 6:00 pm Monday - Saturday</p>
         <p className="mt-5">

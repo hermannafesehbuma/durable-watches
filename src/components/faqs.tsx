@@ -17,7 +17,7 @@ const faqs = [
   {
     question: 'HOW DO I PURCHASE A WATCH?',
     answer:
-      'We insist on making it easy to purchase a luxury watch in person or online. Customers can make an appointment to visit our retail store Monday-Friday at 1719 Chestnut St, Unit 300, Philadelphia, PA 19103, United States, or simply go to our website to purchase one of the watches listed and have it shipped straight to you.',
+      'We insist on making it easy to purchase a luxury watch in person or online. Customers can make an appointment to visit our retail store Monday-Friday at 701 Sansom St, Philadelphia, PA 19106, United States, or simply go to our website to purchase one of the watches listed and have it shipped straight to you.',
   },
   {
     question: 'WHAT IS YOUR RETURN POLICY?',
