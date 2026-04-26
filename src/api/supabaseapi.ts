@@ -37,6 +37,17 @@ export async function getProductById(productId: string) {
   return { data: product, error };
 }
 
+// New function to fetch a single product by name
+export async function getProductByName(name: string) {
+  const { data: product, error } = await supabase
+    .from('products')
+    .select('*')
+    .eq('name', decodeURIComponent(name))
+    .single();
+
+  return { data: product, error };
+}
+
 // New function to fetch product images by productId (foreign key)
 export async function getProductImages(productId: string) {
   console.log('Fetching images for productId:', productId);
@@ -416,6 +427,41 @@ export async function getAllCategories() {
     .order('name', { ascending: true });
 
   return { data: categories, error };
+}
+
+// Function to create a new category
+export async function createCategory(name: string) {
+  const { data, error } = await supabase
+    .from('categories')
+    .insert({ name })
+    .select()
+    .single();
+
+  return { data, error };
+}
+
+// Function to update a category
+export async function updateCategory(id: string, name: string) {
+  const { data, error } = await supabase
+    .from('categories')
+    .update({ name })
+    .eq('id', id)
+    .select()
+    .single();
+
+  return { data, error };
+}
+
+// Function to delete a category
+export async function deleteCategory(id: string) {
+  const { data, error } = await supabase
+    .from('categories')
+    .delete()
+    .eq('id', id)
+    .select()
+    .single();
+
+  return { data, error };
 }
 
 // Function to get all orders with comprehensive data for admin

@@ -39,10 +39,10 @@ export async function revalidateAllPaths() {
   return triggerRevalidation(REVALIDATION_PATHS);
 }
 
-export async function revalidateProductPaths(productId?: string) {
+export async function revalidateProductPaths(productName?: string) {
   const paths = ['/products', '/admin/products', '/'];
-  if (productId) {
-    paths.push(`/product/${productId}`);
+  if (productName) {
+    paths.push(`/product/${encodeURIComponent(productName)}`);
   }
   return triggerRevalidation(paths);
 }

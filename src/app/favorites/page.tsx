@@ -133,7 +133,7 @@ export default function FavoritesPage() {
                     ${item.price}
                   </p>
                   <Link
-                    href={`/product/${item.id}`}
+                    href={`/product/${encodeURIComponent(item.name)}`}
                     className="block w-full bg-teal-600 text-white text-center py-2 rounded-lg hover:bg-teal-700 transition-colors"
                   >
                     View Product

@@ -152,7 +152,7 @@ export default function Search({ isOpen, onToggle, onClose }: SearchProps) {
                   {results.map((product) => (
                     <Link
                       key={product.id}
-                      href={`/product/${product.id}`}
+                      href={`/product/${encodeURIComponent(product.name)}`}
                       onClick={handleResultClick}
                       className="flex items-center p-3 hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0"
                     >

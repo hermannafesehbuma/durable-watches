@@ -106,6 +106,15 @@ export default function AdminDashboard() {
               </h3>
               <p className="text-gray-800">Manage user accounts</p>
             </Link>
+            <Link
+              href="/admin/categories"
+              className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+            >
+              <h3 className="text-lg font-semibold mb-2 text-gray-600">
+                Manage Categories
+              </h3>
+              <p className="text-gray-800">Add, edit, and delete categories</p>
+            </Link>
           </div>
         </div>
       </div>

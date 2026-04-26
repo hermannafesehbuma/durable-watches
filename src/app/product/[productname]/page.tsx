@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { getProductById } from '../../../api/supabaseapi';
+import { getProductByName } from '../../../api/supabaseapi';
 import ProductImages from '@/components/product-images';
 import AddToCart from '@/components/add-to-cart';
 import FavoriteButton from '@/components/favorite-button';
@@ -18,18 +18,19 @@ interface Product {
   weight?: string;
   stock_quantity?: number;
   sku?: string;
+  daimeter?: string;
 }
 
 export default async function ProductPage({
   params,
 }: {
-  params: Promise<{ productid: string }>;
+  params: Promise<{ productname: string }>;
 }) {
   const resolvedParams = await params;
-  const productId = resolvedParams.productid;
+  const productName = resolvedParams.productname;
 
-  // Fetch the specific product by ID
-  const { data: product, error } = await getProductById(productId);
+  // Fetch the specific product by Name
+  const { data: product, error } = await getProductByName(productName);
 
   if (error) {
     return (
@@ -101,7 +102,7 @@ export default async function ProductPage({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Product Image */}
           <div className="space-y-6">
-            <ProductImages productId={productId} />
+            <ProductImages productId={product.id} />
           </div>
 
           {/* Product Details */}
@@ -111,7 +112,7 @@ export default async function ProductPage({
                 {product.name}
               </h1>
               <p className="text-sm text-gray-500 mb-4">
-                SKU: {product.sku || productId}
+                SKU: {product.sku || product.id}
               </p>
 
               {/* Price */}
@@ -217,7 +218,7 @@ export default async function ProductPage({
               <div className="flex flex-row gap-2">
                 <FavoriteButton
                   product={{
-                    id: productId,
+                    id: product.id,
                     name: product.name,
                     price: product.price,
                     image_url: product.image_url,

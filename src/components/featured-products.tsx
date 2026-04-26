@@ -102,7 +102,7 @@ export default function FeaturedProducts() {
                 className="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
               >
                 <div className="relative">
-                  <Link href={`/product/${product.id}`}>
+                  <Link href={`/product/${encodeURIComponent(product.name)}`}>
                     {imageUrl ? (
                       <Image
                         src={imageUrl}
@@ -131,7 +131,7 @@ export default function FeaturedProducts() {
                   </div>
                 </div>
                 <div className="p-4">
-                  <Link href={`/product/${product.id}`}>
+                  <Link href={`/product/${encodeURIComponent(product.name)}`}>
                     <h3 className="text-lg font-semibold text-white mb-2 hover:text-teal-400 transition-colors line-clamp-2">
                       {product.name}
                     </h3>

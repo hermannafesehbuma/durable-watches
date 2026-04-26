@@ -156,7 +156,7 @@ export default function ProductsPage() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group"
                 >
-                  <Link href={`/product/${product.id}`}>
+                  <Link href={`/product/${encodeURIComponent(product.name)}`}>
                     <div className="relative h-64 bg-gray-800">
                       {product.product_images?.[0]?.url ? (
                         <Image
